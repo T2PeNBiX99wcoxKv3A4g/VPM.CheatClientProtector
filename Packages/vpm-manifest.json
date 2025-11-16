@@ -1,1 +1,33 @@
-{"dependencies": {}, "locked": {}}
+{
+  "dependencies": {
+    "jp.lilxyzw.editortoolbox": {
+      "version": "1.11.0"
+    },
+    "com.vrchat.worlds": {
+      "version": "3.9.0"
+    },
+    "net.nekobako.editor-patcher": {
+      "version": "1.0.0"
+    }
+  },
+  "locked": {
+    "jp.lilxyzw.editortoolbox": {
+      "version": "1.11.0",
+      "dependencies": {}
+    },
+    "com.vrchat.base": {
+      "version": "3.9.0",
+      "dependencies": {}
+    },
+    "com.vrchat.worlds": {
+      "version": "3.9.0",
+      "dependencies": {
+        "com.vrchat.base": "3.9.0"
+      }
+    },
+    "net.nekobako.editor-patcher": {
+      "version": "1.0.0",
+      "dependencies": {}
+    }
+  }
+}
