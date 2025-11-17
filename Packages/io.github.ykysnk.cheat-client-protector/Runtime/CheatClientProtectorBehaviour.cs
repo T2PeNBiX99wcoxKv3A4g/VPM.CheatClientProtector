@@ -20,6 +20,11 @@ namespace io.github.ykysnk.CheatClientProtector
         private int _keyCheckPublic;
         private int _randomKey;
         private int _randomKeyPublic;
+
+        /// <summary>
+        ///     Represents the interaction range around a GameObject within which players can trigger specific interactions or
+        ///     checks.
+        /// </summary>
         protected virtual float InteractDistance => 3;
 
         /// <summary>
