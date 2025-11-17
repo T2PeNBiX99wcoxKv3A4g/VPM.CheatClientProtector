@@ -168,7 +168,7 @@ namespace io.github.ykysnk.CheatClientProtector
         /// </summary>
         /// <param name="senderMethodName">The name of the method initiating the request.</param>
         /// <param name="receiverMethodName">The name of the method to be invoked on all clients.</param>
-        public void RequestCallMethodToAll(string senderMethodName, string receiverMethodName) =>
+        public void RequestCallMethodToAll([CanBeNull] string senderMethodName, [CanBeNull] string receiverMethodName) =>
             SendCustomNetworkEvent(NetworkEventTarget.All, nameof(RequestCallMethod), senderMethodName,
                 receiverMethodName);
 
