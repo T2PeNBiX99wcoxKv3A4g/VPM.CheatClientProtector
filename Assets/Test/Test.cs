@@ -27,7 +27,8 @@ namespace Test
             SendCustomNetworkEvent(NetworkEventTarget.All, nameof(OnlyCanBeCallFromInteractWithNetwork));
 
             RequestKeyCheckSync();
-            SendCustomNetworkEvent(NetworkEventTarget.All, nameof(OnlyCanBeCallFromInteractWithNetwork2), "Interact Test");
+            SendCustomNetworkEvent(NetworkEventTarget.All, nameof(OnlyCanBeCallFromInteractWithNetwork2),
+                "Interact Test");
         }
 
         // Always can be called from run custom event. you can just call it from inspector.

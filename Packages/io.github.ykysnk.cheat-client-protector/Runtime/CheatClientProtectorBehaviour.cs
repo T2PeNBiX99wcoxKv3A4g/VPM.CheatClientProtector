@@ -13,12 +13,11 @@ namespace io.github.ykysnk.CheatClientProtector
     [PublicAPI]
     public abstract class CheatClientProtectorBehaviour : UdonSharpBehaviour
     {
-        protected virtual float InteractDistance => 3;
-
         private readonly DataDictionary _keyCheckPool = new DataDictionary();
         private int _keyCheck;
         [UdonSynced] private int _keyCheckSync;
         private int _randomKey;
+        protected virtual float InteractDistance => 3;
 
         protected int RandomKey
         {
