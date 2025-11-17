@@ -1,7 +1,7 @@
 {
   "name": "io.github.ykysnk.cheat-client-protector",
   "displayName": "Cheat Client Protector",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Some random udon scripts may prevent cheat client (or nothing)",
   "gitDependencies": {},
   "vpmDependencies": {

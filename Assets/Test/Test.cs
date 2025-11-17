@@ -23,10 +23,10 @@ namespace Test
             RequestCallMethod(nameof(InteractAntiCheat), nameof(OnlyCanBeCallFromInteractWithDelayed));
             SendCustomEventDelayedSeconds(nameof(OnlyCanBeCallFromInteractWithDelayed), 2);
 
-            RequestKeyCheckSync();
+            RequestCallMethodToAll(nameof(InteractAntiCheat), nameof(OnlyCanBeCallFromInteractWithNetwork));
             SendCustomNetworkEvent(NetworkEventTarget.All, nameof(OnlyCanBeCallFromInteractWithNetwork));
 
-            RequestKeyCheckSync();
+            RequestCallMethodToAll(nameof(InteractAntiCheat), nameof(OnlyCanBeCallFromInteractWithNetwork2));
             SendCustomNetworkEvent(NetworkEventTarget.All, nameof(OnlyCanBeCallFromInteractWithNetwork2),
                 "Interact Test");
         }
@@ -55,15 +55,21 @@ namespace Test
 
         public void OnlyCanBeCallFromInteractWithNetwork()
         {
-            if (!IsKeyCorrectSync()) return;
+            if (!IsMethodHaveRequest(nameof(InteractAntiCheat), nameof(OnlyCanBeCallFromInteractWithNetwork))) return;
             Debug.Log("OnlyCanBeCallFromInteractWithNetwork");
         }
 
         [NetworkCallable]
         public void OnlyCanBeCallFromInteractWithNetwork2(string someTestArg)
         {
-            if (!IsKeyCorrectSync()) return;
+            if (!IsMethodHaveRequest(nameof(InteractAntiCheat), nameof(OnlyCanBeCallFromInteractWithNetwork2))) return;
             Debug.Log($"OnlyCanBeCallFromInteractWithNetwork {someTestArg}");
+        }
+
+        public void OnlyCanBeCallFromOther(string someTestArg, int key)
+        {
+            if (!IsPublicKeyCorrect(key)) return;
+            Debug.Log($"OnlyCanBeCallFromOther {someTestArg}");
         }
     }
 }
