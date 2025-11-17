@@ -12,6 +12,12 @@ using Random = System.Random;
 
 namespace io.github.ykysnk.CheatClientProtector
 {
+    /// <summary>
+    ///     Represents the base behavior for implementing anti-cheat mechanisms
+    ///     in Unity environments using UdonSharp. This class provides utility methods
+    ///     for detecting and preventing unauthorized actions, key validation,
+    ///     and interaction checks.
+    /// </summary>
     [PublicAPI]
     public abstract class CheatClientProtectorBehaviour : UdonSharpBehaviour
     {
