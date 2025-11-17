@@ -42,9 +42,10 @@
       }
     },
     "io.github.ykysnk.utils.world": {
-      "version": "0.0.1",
+      "version": "0.0.2",
       "dependencies": {
-        "com.vrchat.worlds": ">=3.9.0"
+        "com.vrchat.worlds": ">=3.9.0",
+        "io.github.ykysnk.utils": ">=0.2.5"
       }
     }
   }
