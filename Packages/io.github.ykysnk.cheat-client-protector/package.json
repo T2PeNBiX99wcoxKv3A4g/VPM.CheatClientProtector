@@ -5,7 +5,9 @@
   "description": "Some random udon scripts may prevent cheat client (or nothing)",
   "gitDependencies": {},
   "vpmDependencies": {
-    "com.vrchat.worlds": ">=3.9.0"
+    "com.vrchat.worlds": ">=3.9.0",
+    "io.github.ykysnk.utils": ">=0.2.5",
+    "io.github.ykysnk.utils.world": ">=0.0.1"
   },
   "author": {
     "name": "yukiyosanako / \u3086\u304d\u3088\u3055\u306a\u3053",
