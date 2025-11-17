@@ -8,6 +8,12 @@
     },
     "net.nekobako.editor-patcher": {
       "version": "1.0.0"
+    },
+    "io.github.ykysnk.utils": {
+      "version": "0.2.0"
+    },
+    "io.github.ykysnk.utils.world": {
+      "version": "0.0.1"
     }
   },
   "locked": {
@@ -28,6 +34,18 @@
     "net.nekobako.editor-patcher": {
       "version": "1.0.0",
       "dependencies": {}
+    },
+    "io.github.ykysnk.utils": {
+      "version": "0.2.4",
+      "dependencies": {
+        "com.vrchat.base": ">=3.9.0"
+      }
+    },
+    "io.github.ykysnk.utils.world": {
+      "version": "0.0.1",
+      "dependencies": {
+        "com.vrchat.worlds": ">=3.9.0"
+      }
     }
   }
 }

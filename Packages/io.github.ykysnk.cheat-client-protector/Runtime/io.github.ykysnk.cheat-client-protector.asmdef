@@ -1,0 +1,21 @@
+{
+  "name": "io.github.ykysnk.cheat-client-protector",
+  "rootNamespace": "io.github.ykysnk.CheatClientProtector",
+  "references": [
+    "VRC.SDK3",
+    "VRC.SDKBase",
+    "VRC.Udon",
+    "UdonSharp.Lib",
+    "UdonSharp.Runtime",
+    "io.github.ykysnk.utils"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

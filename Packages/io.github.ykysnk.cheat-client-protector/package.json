@@ -1,0 +1,18 @@
+{
+  "name": "io.github.ykysnk.cheat-client-protector",
+  "displayName": "Cheat Client Protector",
+  "version": "0.0.1",
+  "description": "Some random udon scripts may prevent cheat client (or nothing)",
+  "gitDependencies": {},
+  "vpmDependencies": {
+    "com.vrchat.worlds": ">=3.9.0"
+  },
+  "author": {
+    "name": "yukiyosanako / \u3086\u304d\u3088\u3055\u306a\u3053",
+    "email": "github.qszdy@aleeas.com",
+    "url": "https://github.com/T2PeNBiX99wcoxKv3A4g"
+  },
+  "legacyFolders": {},
+  "legacyFiles": {},
+  "localPath": "L:\\VRChatProjects\\VPM.CheatClientProtector\\Packages\\io.github.ykysnk.cheat-client-protector"
+}

@@ -214,12 +214,6 @@
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       }
     },
-    "com.vrchat.demo-template": {
-      "version": "file:com.vrchat.demo-template",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "com.vrchat.worlds": {
       "version": "file:com.vrchat.worlds",
       "depth": 0,
@@ -230,6 +224,24 @@
         "com.unity.inputsystem": "1.2.0",
         "com.unity.ai.navigation": "1.1.5"
       }
+    },
+    "io.github.ykysnk.cheat-client-protector": {
+      "version": "file:io.github.ykysnk.cheat-client-protector",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "io.github.ykysnk.utils": {
+      "version": "file:io.github.ykysnk.utils",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "io.github.ykysnk.utils.world": {
+      "version": "file:io.github.ykysnk.utils.world",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
     },
     "jp.lilxyzw.editortoolbox": {
       "version": "file:jp.lilxyzw.editortoolbox",
