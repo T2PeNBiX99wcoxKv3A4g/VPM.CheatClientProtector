@@ -68,7 +68,7 @@ namespace Test
 
         public void OnlyCanBeCallFromOther(string someTestArg, int key)
         {
-            if (!IsPublicKeyCorrect(key)) return;
+            if (!IsKeyCorrect(key)) return;
             Debug.Log($"OnlyCanBeCallFromOther {someTestArg}");
         }
     }

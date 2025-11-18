@@ -12,7 +12,7 @@ namespace Test
 
         protected override void InteractAntiCheat()
         {
-            test.OnlyCanBeCallFromOther($"Call from {this}", test.RandomKeyPublic);
+            test.OnlyCanBeCallFromOther($"Call from {this}", test.RandomKey);
         }
     }
 }
