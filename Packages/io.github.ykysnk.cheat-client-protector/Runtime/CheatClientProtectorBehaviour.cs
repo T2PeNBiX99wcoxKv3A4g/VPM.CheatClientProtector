@@ -23,9 +23,7 @@ namespace io.github.ykysnk.CheatClientProtector
     {
         private readonly DataDictionary _keyCheckPool = new DataDictionary();
         private int _keyCheck;
-        private int _keyCheckPublic;
         private int _randomKey;
-        private int _randomKeyPublic;
 
         /// <summary>
         ///     Represents the interaction range around a GameObject within which players can trigger specific interactions or
@@ -36,24 +34,12 @@ namespace io.github.ykysnk.CheatClientProtector
         /// <summary>
         ///     Generates a pseudo-random key based on the current time and the internal random key value.
         /// </summary>
-        protected int RandomKey
+        public int RandomKey
         {
             get
             {
                 var random = new Random(DateTime.Now.Millisecond * _randomKey);
                 return _randomKey = random.Next(int.MinValue, int.MaxValue);
-            }
-        }
-
-        /// <summary>
-        ///     Generates a public pseudo-random key by combining the current time-based seed with an internal key value.
-        /// </summary>
-        public int RandomKeyPublic
-        {
-            get
-            {
-                var random = new Random(DateTime.Now.Millisecond * _randomKeyPublic);
-                return _randomKeyPublic = random.Next(int.MinValue, int.MaxValue);
             }
         }
 
@@ -79,30 +65,6 @@ namespace io.github.ykysnk.CheatClientProtector
             var keyCheck = _keyCheck;
             _keyCheck = 0;
             return IsKeyCorrect(keyCheck);
-        }
-
-        /// <summary>
-        ///     Check if the public key is correct.
-        /// </summary>
-        /// <param name="key">The public key to validate.</param>
-        /// <returns>true if the public key is correct; otherwise, false.</returns>
-        [SuppressMessage("ReSharper", "UnusedVariable")]
-        protected bool IsPublicKeyCorrect(int key)
-        {
-            var correct = key == _randomKeyPublic;
-            var newKey = RandomKeyPublic;
-            return correct;
-        }
-
-        /// <summary>
-        ///     Checks if the public key is correct.
-        /// </summary>
-        /// <returns>True if the synchronized public key is correct; otherwise, false.</returns>
-        protected bool IsPublicKeyCorrect()
-        {
-            var keyCheck = _keyCheckPublic;
-            _keyCheckPublic = 0;
-            return IsPublicKeyCorrect(keyCheck);
         }
 
         /// <summary>
@@ -175,12 +137,7 @@ namespace io.github.ykysnk.CheatClientProtector
         /// <summary>
         ///     Stores a new randomized key for validation purposes.
         /// </summary>
-        protected void RequestKeyCheck() => _keyCheck = RandomKey;
-
-        /// <summary>
-        ///     Updates the public key check value with a newly generated random public key.
-        /// </summary>
-        public void RequestKeyCheckPublic() => _keyCheckPublic = RandomKeyPublic;
+        public void RequestKeyCheck() => _keyCheck = RandomKey;
 
         /// <summary>
         ///     Encodes the provided value into a Base64 string.
@@ -192,7 +149,7 @@ namespace io.github.ykysnk.CheatClientProtector
         /// <returns>The Base64 encoded string representation of the provided value.</returns>
         [CanBeNull]
         [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
-        protected string Base64([CanBeNull] object value) => !Utilities.IsValid(value)
+        protected static string Base64([CanBeNull] object value) => !Utilities.IsValid(value)
             ? null
             : Convert.ToBase64String(Encoding.UTF8.GetBytes(value.ToString()));
 
