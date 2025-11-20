@@ -2,6 +2,9 @@ name: Build Release
 
 on: 
   workflow_dispatch:
+  push:
+    paths:
+      - 'Packages/io.github.ykysnk.cheat-client-protector/package.json'
 
 jobs:
 
