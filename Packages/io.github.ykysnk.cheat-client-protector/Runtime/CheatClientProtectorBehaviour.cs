@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using io.github.ykysnk.utils.Extensions;
 using JetBrains.Annotations;
@@ -48,10 +47,10 @@ namespace io.github.ykysnk.CheatClientProtector
         /// </summary>
         /// <param name="key">The key to be validated.</param>
         /// <returns>True if the provided key matches the expected key; otherwise, false.</returns>
-        [SuppressMessage("ReSharper", "UnusedVariable")]
         protected bool IsKeyCorrect(int key)
         {
             var correct = key == _randomKey;
+            // ReSharper disable once UnusedVariable
             var newKey = RandomKey;
             return correct;
         }
@@ -73,7 +72,7 @@ namespace io.github.ykysnk.CheatClientProtector
         /// <param name="senderMethodName">The name of the sender method.</param>
         /// <param name="receiverMethodName">The name of the receiver method.</param>
         /// <returns>true if a request exists between the sender and receiver methods; otherwise, false.</returns>
-        protected bool IsMethodHaveRequest(string senderMethodName, string receiverMethodName)
+        protected bool IsMethodHaveRequest([NotNull] string senderMethodName, [NotNull] string receiverMethodName)
         {
             // Kinda useless, I'm lazy to convert it to sha256
             senderMethodName = Base64(senderMethodName);
@@ -101,8 +100,9 @@ namespace io.github.ykysnk.CheatClientProtector
         /// <param name="senderMethodName">The name of the method that initiated the request.</param>
         /// <param name="receiverMethodName">The name of the method intended to receive the request.</param>
         [NetworkCallable]
-        public void RequestCallMethod([CanBeNull] string senderMethodName, [CanBeNull] string receiverMethodName)
+        public void RequestCallMethod([NotNull] string senderMethodName, [NotNull] string receiverMethodName)
         {
+            // If call the method from udon event call, the string may be null or empty.
             if (string.IsNullOrEmpty(senderMethodName) || string.IsNullOrEmpty(receiverMethodName)) return;
             // Kinda useless, I'm lazy to convert it to sha256
             senderMethodName = Base64(senderMethodName);
@@ -148,8 +148,7 @@ namespace io.github.ykysnk.CheatClientProtector
         /// </param>
         /// <returns>The Base64 encoded string representation of the provided value.</returns>
         [CanBeNull]
-        [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
-        protected static string Base64([CanBeNull] object value) => !Utilities.IsValid(value)
+        protected static string Base64([CanBeNull] object value) => value == null || !Utilities.IsValid(value)
             ? null
             : Convert.ToBase64String(Encoding.UTF8.GetBytes(value.ToString()));
 
