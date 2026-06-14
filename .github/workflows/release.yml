@@ -15,15 +15,15 @@ jobs:
       config_package: ${{ steps.config_package.outputs.configPackage }}
     steps:
 
-    # Ensure that required repository variable has been created for the Package
-    - name: Validate Package Config
-      id: config_package
-      run: |
-        if [ "${{ vars.PACKAGE_NAME }}" != "" ]; then
-          echo "configPackage=true" >> $GITHUB_OUTPUT;
-        else
-          echo "configPackage=false" >> $GITHUB_OUTPUT;
-        fi
+      # Ensure that required repository variable has been created for the Package
+      - name: Validate Package Config
+        id: config_package
+        run: |
+          if [ "${{ vars.PACKAGE_NAME }}" != "" ]; then
+            echo "configPackage=true" >> $GITHUB_OUTPUT;
+          else
+            echo "configPackage=false" >> $GITHUB_OUTPUT;
+          fi
 
   # Build and release the Package
   # If the repository is not configured properly, this job will be skipped
@@ -39,7 +39,9 @@ jobs:
 
       # Checkout Local Repository
       - name: Checkout
-        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       # Get the Package version based on the package.json file
       - name: Get Version
@@ -75,16 +77,66 @@ jobs:
       # Make a release tag of the version from the package.json file 
       - name: Create Tag
         id: tag_version
-        uses: rickstaa/action-create-tag@88dbf7ff6fe2405f8e8f6c6fdfd78829bc631f83
+        uses: rickstaa/action-create-tag@v1
         with:
           tag: "${{ env.version }}"
+
+      - name: Install `typos-cli` from `crates.io`
+        uses: baptiste0928/cargo-install@v3
+        with:
+          crate: typos-cli
+
+      - name: Pull changes
+        run: git pull
+
+      - name: Generate a changelog
+        uses: orhun/git-cliff-action@v4
+        id: git-cliff
+        with:
+          args: --verbose --config-url https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/Git-Cliff-Template/refs/heads/master/cliff-vpm.toml
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          OUTPUT: CHANGELOG.md
+          GITHUB_REPO: ${{ github.repository }}
+
+      - name: Set git user
+        uses: fregante/setup-git-user@v2
+
+      - name: Check for changes
+        run: git status
+
+      - name: Stage changed files
+        run: git add .
+
+      - name: Commit changed files
+        run: "git commit -m 'Action: Update `CHANGELOG.md`'"
+
+      - name: Fetch from main
+        run: git fetch origin main
+
+      - name: Push code to main
+        run: git push origin main
+
+      - name: Pull changes
+        run: git pull
+
+      - name: Generate a release body
+        uses: orhun/git-cliff-action@v4
+        id: git-cliff2
+        with:
+          args: --verbose --latest --strip header --config-url https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/Git-Cliff-Template/refs/heads/master/cliff-vpm.toml
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          OUTPUT: CHANGES.md
+          GITHUB_REPO: ${{ github.repository }}
       
       # Publish the Release to GitHub
       - name: Make Release
-        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844
+        uses: softprops/action-gh-release@v3
         with:
           files: |
             ${{ env.zipFile }}
             ${{ env.unityPackage }}
             ${{ env.packagePath }}/package.json
           tag_name: ${{ env.version }}
+          body: ${{ steps.git-cliff2.outputs.content }}
