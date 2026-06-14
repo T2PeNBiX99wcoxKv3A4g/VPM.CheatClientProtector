@@ -1,3 +1,1 @@
-# Cheat Client Protector
-
-Some random udon scripts may prevent cheat client (or nothing)
+Packages/io.github.ykysnk.cheat-client-protector/README.md
