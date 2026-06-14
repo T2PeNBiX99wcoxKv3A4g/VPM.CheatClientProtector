@@ -12,9 +12,6 @@
     "io.github.ykysnk.utils": {
       "version": "0.2.0"
     },
-    "io.github.ykysnk.utils.world": {
-      "version": "0.0.1"
-    },
     "io.github.ykysnk.yky-toolkit": {
       "version": "0.18.2"
     },
@@ -42,15 +39,8 @@
       "dependencies": {}
     },
     "io.github.ykysnk.utils": {
-      "version": "0.44.3",
+      "version": "0.44.4",
       "dependencies": {}
-    },
-    "io.github.ykysnk.utils.world": {
-      "version": "0.0.5",
-      "dependencies": {
-        "com.vrchat.worlds": ">=3.9.0",
-        "io.github.ykysnk.utils": ">=0.5.0"
-      }
     },
     "io.github.ykysnk.yky-toolkit": {
       "version": "0.18.2",

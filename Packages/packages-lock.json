@@ -243,12 +243,6 @@
       "source": "embedded",
       "dependencies": {}
     },
-    "io.github.ykysnk.utils.world": {
-      "version": "file:io.github.ykysnk.utils.world",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "io.github.ykysnk.yky-toolkit": {
       "version": "file:io.github.ykysnk.yky-toolkit",
       "depth": 0,
