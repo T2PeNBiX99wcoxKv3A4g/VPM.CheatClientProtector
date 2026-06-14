@@ -231,6 +231,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "io.github.ykysnk.localization": {
+      "version": "file:io.github.ykysnk.localization",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "io.github.ykysnk.utils": {
       "version": "file:io.github.ykysnk.utils",
       "depth": 0,
@@ -243,6 +249,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "io.github.ykysnk.yky-toolkit": {
+      "version": "file:io.github.ykysnk.yky-toolkit",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "jp.lilxyzw.editortoolbox": {
       "version": "file:jp.lilxyzw.editortoolbox",
       "depth": 0,
@@ -251,6 +263,12 @@
     },
     "net.nekobako.editor-patcher": {
       "version": "file:net.nekobako.editor-patcher",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "net.nekobako.mask-texture-editor": {
+      "version": "file:net.nekobako.mask-texture-editor",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}

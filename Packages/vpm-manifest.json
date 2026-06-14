@@ -14,6 +14,12 @@
     },
     "io.github.ykysnk.utils.world": {
       "version": "0.0.1"
+    },
+    "io.github.ykysnk.yky-toolkit": {
+      "version": "0.18.2"
+    },
+    "net.nekobako.mask-texture-editor": {
+      "version": "1.3.0"
     }
   },
   "locked": {
@@ -22,31 +28,46 @@
       "dependencies": {}
     },
     "com.vrchat.base": {
-      "version": "3.9.0",
+      "version": "3.10.3",
       "dependencies": {}
     },
     "com.vrchat.worlds": {
-      "version": "3.9.0",
+      "version": "3.10.3",
       "dependencies": {
-        "com.vrchat.base": "3.9.0"
+        "com.vrchat.base": "3.10.3"
       }
     },
     "net.nekobako.editor-patcher": {
-      "version": "1.0.0",
+      "version": "1.1.0",
       "dependencies": {}
     },
     "io.github.ykysnk.utils": {
-      "version": "0.3.1",
-      "dependencies": {
-        "com.vrchat.base": ">=3.9.0"
-      }
+      "version": "0.44.3",
+      "dependencies": {}
     },
     "io.github.ykysnk.utils.world": {
-      "version": "0.0.4",
+      "version": "0.0.5",
       "dependencies": {
         "com.vrchat.worlds": ">=3.9.0",
-        "io.github.ykysnk.utils": ">=0.2.5"
+        "io.github.ykysnk.utils": ">=0.5.0"
       }
+    },
+    "io.github.ykysnk.yky-toolkit": {
+      "version": "0.18.2",
+      "dependencies": {
+        "io.github.ykysnk.localization": ">=0.9.0",
+        "io.github.ykysnk.utils": ">=0.41.0"
+      }
+    },
+    "io.github.ykysnk.localization": {
+      "version": "0.9.3",
+      "dependencies": {
+        "io.github.ykysnk.utils": ">=0.33.2"
+      }
+    },
+    "net.nekobako.mask-texture-editor": {
+      "version": "1.3.0",
+      "dependencies": {}
     }
   }
 }
