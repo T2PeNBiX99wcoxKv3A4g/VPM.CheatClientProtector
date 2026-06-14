@@ -1,7 +1,7 @@
 {
   "name": "io.github.ykysnk.cheat-client-protector",
   "displayName": "Cheat Client Protector",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Some random udon scripts may prevent cheat client (or nothing)",
   "gitDependencies": {},
   "vpmDependencies": {
@@ -15,5 +15,6 @@
   },
   "legacyFolders": {},
   "legacyFiles": {},
-  "localPath": "L:\\VRChatProjects\\VPM.CheatClientProtector\\Packages\\io.github.ykysnk.cheat-client-protector"
+  "changelogUrl": "https://github.com/T2PeNBiX99wcoxKv3A4g/VPM.CheatClientProtector/blob/main/CHANGELOG.md",
+  "license": "MIT"
 }
