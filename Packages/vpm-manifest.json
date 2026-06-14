@@ -17,6 +17,9 @@
     },
     "net.nekobako.mask-texture-editor": {
       "version": "1.3.0"
+    },
+    "blueamulet.udonsharpoptimizer": {
+      "version": "1.0.12"
     }
   },
   "locked": {
@@ -58,6 +61,12 @@
     "net.nekobako.mask-texture-editor": {
       "version": "1.3.0",
       "dependencies": {}
+    },
+    "blueamulet.udonsharpoptimizer": {
+      "version": "1.0.12",
+      "dependencies": {
+        "com.vrchat.worlds": "^3.4.2"
+      }
     }
   }
 }
